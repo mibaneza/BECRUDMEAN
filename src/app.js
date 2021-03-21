@@ -6,7 +6,7 @@ app.set('port',process.env.PORT)
 app.use(morgan('dev'))
 
 var allowedOrigins = ['http://localhost:4200',
-                      'https://mibaneza.github.io/'];
+                      'http://mean.chevere.ga'];
 app.use(cors({
   origin: function(origin, callback){
     // allow requests with no origin 
