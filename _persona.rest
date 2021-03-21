@@ -1,0 +1,26 @@
+###
+GET http://localhost:3000/api/persona
+
+
+###
+PATCH  http://localhost:3000/api/persona/605690d4d1d1ce12e0719078
+Content-Type: application/json
+
+{
+    "nombre": "Carlos",
+    "apellido": "Ibañez"
+    
+}
+
+###
+POST   http://localhost:3000/api/hijo/
+Content-Type: application/json
+
+{
+  "idPersona": "605690d4d1d1ce12e0719078",
+  "nombre": "Carlos",
+  "apellido": "Ibañez",
+  "fecNac": "06-05-1995",
+  "fecIngreso": "06-05-2021"
+}
+
