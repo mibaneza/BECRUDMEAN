@@ -31,8 +31,8 @@ hijoCtrl.create = async (req, res) => {
         fecIngreso: req.body.fecIngreso,
     });
     try {
-        await hijoReq.save()
-        res.status(200).send({message : true})
+       const createhijo  = await hijoReq.save()
+       res.status(200).json(createhijo);
     } catch (err) {
         res.send('Error'+err)        
     }
@@ -46,7 +46,7 @@ hijoCtrl.update = async (req, res) => {
     condicionalHijo(res,req)
     try {
         const updateByHijo = await  res.hijo.save()
-        res.json(updateByHijo);
+        res.status(200).json(updateByHijo);
     } catch (err) {
         res.status(400).json({ message: err.message })
     }

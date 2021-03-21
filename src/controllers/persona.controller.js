@@ -19,8 +19,8 @@ personaCtrl.create = async (req, res) => {
         fecIngreso: req.body.fecIngreso,
     });
     try {
-        await personaReq.save()
-        res.status(200).send({message : true})
+         const saveByPersona = await personaReq.save()
+        res.status(200).json(saveByPersona);
     } catch (err) {
         res.send('Error'+err)        
     }
@@ -34,7 +34,7 @@ personaCtrl.update = async (req, res) => {
     condicionalPersona(res,req)
     try {
         const updateByPersona = await  res.persona.save()
-        res.json(updateByPersona);
+        res.status(200).json(updateByPersona);
     } catch (err) {
         res.status(400).json({ message: err.message })
     }
